@@ -19,6 +19,8 @@ export type Destination = {
   capacity: number;
   bestFor: string;
   stay: string;
+  stayType: string;
+  experiences: string[];
 };
 
 const photo = (id: number) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1400`;
@@ -43,6 +45,8 @@ export const destinations: Destination[] = [
     capacity: 2,
     bestFor: 'Birders, forest bathing, quiet weekends',
     stay: 'Mud-plastered cottage',
+    stayType: 'Mud cottage',
+    experiences: ['Local meals', 'Guided nature walks', 'Birding'],
   },
   {
     id: 'harishchandragad',
@@ -63,6 +67,8 @@ export const destinations: Destination[] = [
     capacity: 4,
     bestFor: 'Trekkers, star watchers, first light',
     stay: 'Canvas ridge tent',
+    stayType: 'Agro-tent',
+    experiences: ['Local meals', 'Guided trek', 'Stargazing'],
   },
   {
     id: 'tarkarli',
@@ -83,6 +89,8 @@ export const destinations: Destination[] = [
     capacity: 3,
     bestFor: 'Coastal food, paddling, families',
     stay: 'Riverside homestay',
+    stayType: 'Village homestay',
+    experiences: ['Local meals', 'Mangrove paddle', 'Village cycling'],
   },
   {
     id: 'kaas',
@@ -103,6 +111,8 @@ export const destinations: Destination[] = [
     capacity: 2,
     bestFor: 'Botany, photography, gentle walks',
     stay: 'Farm loft',
+    stayType: 'Farm stay',
+    experiences: ['Local meals', 'Guided nature walks', 'Botany walk'],
   },
   {
     id: 'bhandardara',
@@ -123,6 +133,8 @@ export const destinations: Destination[] = [
     capacity: 3,
     bestFor: 'Long lunches, lake swims, families',
     stay: 'Orchard cottage',
+    stayType: 'Farm stay',
+    experiences: ['Local meals', 'Village walk', 'Lake mornings'],
   },
   {
     id: 'nandur-madhameshwar',
@@ -143,6 +155,8 @@ export const destinations: Destination[] = [
     capacity: 4,
     bestFor: 'Birding, cycling, curious mornings',
     stay: 'Courtyard rooms',
+    stayType: 'Heritage wada',
+    experiences: ['Local meals', 'Birding', 'Village cycling'],
   },
   {
     id: 'amboli',
@@ -163,6 +177,8 @@ export const destinations: Destination[] = [
     capacity: 2,
     bestFor: 'Rain lovers, waterfalls, writing',
     stay: 'Hill home',
+    stayType: 'Village homestay',
+    experiences: ['Local meals', 'Waterfall trail', 'Guided nature walks'],
   },
   {
     id: 'tadoba-buffer',
@@ -183,8 +199,12 @@ export const destinations: Destination[] = [
     capacity: 3,
     bestFor: 'Wildlife, culture, wide skies',
     stay: 'Forest-edge home',
+    stayType: 'Village homestay',
+    experiences: ['Local meals', 'Wildlife watch', 'Gond art workshop'],
   },
 ];
 
 export const allTags = Array.from(new Set(destinations.flatMap((destination) => destination.tags)));
 export const allRegions: Region[] = ['Sahyadri', 'Konkan', 'Vidarbha', 'Marathwada'];
+export const allStayTypes = Array.from(new Set(destinations.map((destination) => destination.stayType)));
+export const allExperiences = Array.from(new Set(destinations.flatMap((destination) => destination.experiences)));
