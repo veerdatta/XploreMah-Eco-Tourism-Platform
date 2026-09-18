@@ -1,0 +1,7 @@
+{
+  "framework": "vite",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --filter @workspace/xploremah build",
+  "outputDirectory": "scripts/src/xploremah/dist/public",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
